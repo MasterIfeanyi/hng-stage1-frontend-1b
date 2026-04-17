@@ -10,34 +10,35 @@
 
     <!-- Profile Card Root Container -->
     <article data-testid="test-profile-card">
+
+        <!-- Avatar Image -->
+        <figure>
+            <img
+            src="https://randomuser.me/api/portraits/women/68.jpg"
+            alt="Sarah Johnson - smiling woman with brown hair wearing a blue shirt"
+            data-testid="test-user-avatar"
+            width="150"
+            height="150"
+            >
+            <figcaption>Profile Photo</figcaption>
+        </figure>
+
         <!-- Name Section -->
         <header>
             <h2 data-testid="test-user-name" aria-label="User name">Sarah Johnson</h2>
         </header>
-        
+
         <!-- Short Biography -->
         <p data-testid="test-user-bio">
-            Passionate frontend developer with 5+ years of experience building accessible web applications. 
+            Passionate frontend developer with 5+ years of experience building accessible web applications.
             Loves creating meaningful user experiences and mentoring junior developers.
         </p>
-        
-        <!-- Avatar Image -->
-        <figure>
-            <img 
-                src="https://randomuser.me/api/portraits/women/68.jpg" 
-                alt="Sarah Johnson - smiling woman with brown hair wearing a blue shirt" 
-                data-testid="test-user-avatar"
-                width="150"
-                height="150"
-            >
-            <figcaption>Profile Photo</figcaption>
-        </figure>
-        
-        <!-- Current Time in Milliseconds -->
-        <div>
-            <strong>Current Time:</strong> 
-            <span data-testid="test-user-time" id="currentTime"></span> milliseconds
-        </div>
+
+        <!-- Current Time Display -->
+        <p aria-live="polite">
+            <strong>Current Time:</strong>
+            <time data-testid="test-user-time" id="currentTime">0</time> milliseconds
+        </p>
         
         <!-- Social Links -->
         <nav aria-label="Social media links">
@@ -68,28 +69,32 @@
                 </li>
             </ul>
         </nav>
-        
-        <!-- Hobbies List -->
-        <section aria-label="Hobbies">
-            <h3>Hobbies</h3>
-            <ul data-testid="test-user-hobbies">
-                <li>📚 Reading tech blogs</li>
-                <li>🎨 Digital illustration</li>
-                <li>🏃‍♀️ Trail running</li>
-                <li>🎸 Playing guitar</li>
-            </ul>
+
+
+        <section class="lists-container">
+            <!-- Hobbies List -->
+            <section aria-label="Hobbies">
+                <h3>Hobbies</h3>
+                <ul data-testid="test-user-hobbies">
+                    <li>📚 Reading tech blogs</li>
+                    <li>🎨 Digital illustration</li>
+                    <li>🏃‍♀️ Trail running</li>
+                    <li>🎸 Playing guitar</li>
+                </ul>
+            </section>
+    
+            <!-- Dislikes List -->
+            <section aria-label="Dislikes">
+                <h3>Dislikes</h3>
+                <ul data-testid="test-user-dislikes">
+                    <li>🚫 Poorly optimized websites</li>
+                    <li>🚫 Unresponsive design</li>
+                    <li>🚫 Missing alt text on images</li>
+                    <li>🚫 Inconsistent code formatting</li>
+                </ul>
+            </section>
         </section>
-        
-        <!-- Dislikes List -->
-        <section aria-label="Dislikes">
-            <h3>Dislikes</h3>
-            <ul data-testid="test-user-dislikes">
-                <li>🚫 Poorly optimized websites</li>
-                <li>🚫 Unresponsive design</li>
-                <li>🚫 Missing alt text on images</li>
-                <li>🚫 Inconsistent code formatting</li>
-            </ul>
-        </section>
+
     </article>
 
     <script>
@@ -100,10 +105,10 @@
                 timeElement.textContent = Date.now();
             }
         }
-        
+
         // Initial time display
         updateTime();
-        
+
         // Update time every 1000ms (1 second)
         setInterval(updateTime, 1000);
     </script>
