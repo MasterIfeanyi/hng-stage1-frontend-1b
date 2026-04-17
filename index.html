@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card - Frontend Wizards</title>
+</head>
+<body>
+    <!-- Profile Card Root Container -->
+    <article data-testid="test-profile-card">
+        <!-- Name Section -->
+        <header>
+            <h2 data-testid="test-user-name" aria-label="User name">Sarah Johnson</h2>
+        </header>
+        
+        <!-- Short Biography -->
+        <p data-testid="test-user-bio">
+            Passionate frontend developer with 5+ years of experience building accessible web applications. 
+            Loves creating meaningful user experiences and mentoring junior developers.
+        </p>
+        
+        <!-- Avatar Image -->
+        <figure>
+            <img 
+                src="https://randomuser.me/api/portraits/women/68.jpg" 
+                alt="Sarah Johnson - smiling woman with brown hair wearing a blue shirt" 
+                data-testid="test-user-avatar"
+                width="150"
+                height="150"
+            >
+            <figcaption>Profile Photo</figcaption>
+        </figure>
+        
+        <!-- Current Time in Milliseconds -->
+        <div>
+            <strong>Current Time:</strong> 
+            <span data-testid="test-user-time" id="currentTime"></span> milliseconds
+        </div>
+        
+        <!-- Social Links -->
+        <nav aria-label="Social media links">
+            <ul data-testid="test-user-social-links">
+                <li>
+                    <a href="https://twitter.com/sarahj_dev" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       data-testid="test-user-social-twitter">
+                        Twitter
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/sarahjohnson" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       data-testid="test-user-social-github">
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com/in/sarahjohnson" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       data-testid="test-user-social-linkedin">
+                        LinkedIn
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Hobbies List -->
+        <section aria-label="Hobbies">
+            <h3>Hobbies</h3>
+            <ul data-testid="test-user-hobbies">
+                <li>📚 Reading tech blogs</li>
+                <li>🎨 Digital illustration</li>
+                <li>🏃‍♀️ Trail running</li>
+                <li>🎸 Playing guitar</li>
+            </ul>
+        </section>
+        
+        <!-- Dislikes List -->
+        <section aria-label="Dislikes">
+            <h3>Dislikes</h3>
+            <ul data-testid="test-user-dislikes">
+                <li>🚫 Poorly optimized websites</li>
+                <li>🚫 Unresponsive design</li>
+                <li>🚫 Missing alt text on images</li>
+                <li>🚫 Inconsistent code formatting</li>
+            </ul>
+        </section>
+    </article>
+
+    <script>
+        // Function to update current time in milliseconds
+        function updateTime() {
+            const timeElement = document.getElementById('currentTime');
+            if (timeElement) {
+                timeElement.textContent = Date.now();
+            }
+        }
+        
+        // Initial time display
+        updateTime();
+        
+        // Update time every 1000ms (1 second)
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>

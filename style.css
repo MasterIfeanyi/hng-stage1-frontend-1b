@@ -1,0 +1,26 @@
+:root {
+  /* Brand Colors */
+  --brand: #58C4DC;
+  --brand-hover: #79D2E6;
+  
+  /* Neutrals */
+  --primary: #23272F;
+  --white: #FFFFFF;
+  --black: #16181D;
+  
+  /* Backgrounds */
+  --background: #F6F7F9;
+  --surface: #FFFFFF;
+  
+  /* Dark Mode */
+  --background-dark: #23272F;
+  --surface-dark: #343A46;
+  --text-dark: #F6F7F9;
+}
+
+/* Dark Mode Override */
+[data-theme="dark"] {
+  --background: var(--background-dark);
+  --surface: var(--surface-dark);
+  --primary: var(--text-dark);
+}
